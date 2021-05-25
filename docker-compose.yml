@@ -24,7 +24,7 @@ services:
         networks: 
             - ts_network
         healthcheck:
-            test: pg_isready -U olist -d olist123
+            test: pg_isready -U olist -d postgres
             timeout: 3s
             interval: 5s
             retries: 3
