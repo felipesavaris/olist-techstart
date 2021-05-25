@@ -10,6 +10,10 @@
 #### - Utilize o Poetry para instalar as dependências no seu projeto:
 ```poetry install```
 
+
+#### - Iniciar a virtualenv:
+```poetry shell```
+
 #### - Migrar as tabelas do banco de dados:
 ```python manage.py migrate```
 
