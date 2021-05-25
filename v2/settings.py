@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'olist',
         'PASSWORD':'olist123',
-        'HOST':'172.17.0.2',
+        'HOST':'ts_postgres',
         'PORT':'5432',
     }
 } 
