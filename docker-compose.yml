@@ -1,0 +1,33 @@
+version: '3.9'
+
+services: 
+    ts_techstart:
+        build:
+            dockerfile: Dockerfile
+            context: .
+        ports: 
+            - "8000:8000"
+        networks:
+            - ts_network
+        depends_on: 
+            ts_postgres:
+                condition: service_healthy
+
+
+    ts_postgres:
+        image: postgres:latest
+        container_name: ts_postgres
+        environment: 
+            POSTGRES_USER: olist
+            POSTGRES_PASSWORD: olist123
+
+        networks: 
+            - ts_network
+        healthcheck:
+            test: pg_isready -U olist -d olist123
+            timeout: 3s
+            interval: 5s
+            retries: 3
+networks:
+    ts_network:
+        driver: bridge
